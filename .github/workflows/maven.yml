@@ -32,7 +32,7 @@ jobs:
         REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
         REGISTRY_PASS: ${{ secrets.REGISTRY_PASS }}
         REGISTRY_URL: ${{ secrets.REGISTRY_URL }}
-      run:  echo "${{ secrets.REGISTRY_URL }}"
+      run:  env
       
     - name: Build with Maven
       run: mvn install --no-transfer-progress -f ./pom.xml -pl common -am
