@@ -28,10 +28,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Registry output
-      env:
-        REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
-        REGISTRY_PASS: ${{ secrets.REGISTRY_PASS }}
-        REGISTRY_URL: ${{ secrets.REGISTRY_URL }}
       run:  env
       
     - name: Build with Maven
