@@ -29,7 +29,9 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn install --no-transfer-progress -f ./pom.xml -pl common -am
-           mvn clean package --no-transfer-progress -f ./operator/pom.xml -Doperator \
+      
+    - name: Build operator with Maven
+      run: mvn clean package --no-transfer-progress -f ./operator/pom.xml -Doperator \
             -Dquarkus.container-image.build=true \
             -Dquarkus.container-image.registry=myregistry.org \
             -Dquarkus.container-image.name=keycloak-operator \
